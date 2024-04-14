@@ -1,0 +1,19 @@
+int potpin = A2;  
+int ledpin = 13;
+int val;
+ 
+void setup() 
+{ 
+pinMode(ledpin, OUTPUT);
+Serial.begin(9600);
+} 
+ 
+void loop() 
+{ 
+  val = analogRead(potpin);
+  Serial.println(val);
+  digitalWrite(ledpin, HIGH);
+  delay(val);                         
+  digitalWrite(ledpin, LOW);
+  delay(val);
+}

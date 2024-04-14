@@ -1,0 +1,18 @@
+int sensorPin = A0; 
+int ledPin = 8; 
+int lightVal;
+void setup()
+{
+pinMode(ledPin, OUTPUT);
+Serial.begin(9600);
+}
+void loop() {
+lightVal = analogRead(sensorPin);
+Serial.println(lightVal);
+if(lightVal < 100) {
+digitalWrite(ledPin,HIGH);
+}
+else { 
+  digitalWrite(ledPin, LOW);
+}
+}

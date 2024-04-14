@@ -1,0 +1,42 @@
+#define echo 3
+#define trig 2
+#define outA 8
+#define outB 7
+float duration;
+float distance;
+const int intruderDistance = 100; 
+void setup() {
+pinMode(trig, OUTPUT);
+pinMode(echo, INPUT);
+pinMode(outA, OUTPUT);
+pinMode(outB, OUTPUT);
+Serial.begin(9600);
+
+}
+void loop() {
+time_Measurement();
+distance = (float)duration * (0.0343) / 2;
+Serial.println(distance);
+alarm_condition();
+}
+void time_Measurement()
+{
+delay(2);
+digitalWrite(trig, HIGH);
+delay(10);
+digitalWrite(trig, LOW);
+duration = pulseIn(echo, HIGH);
+}
+void alarm_condition()
+{ 
+if(distance<=intruderDistance)
+{
+digitalWrite(outA,HIGH);
+digitalWrite(outB,LOW);
+}
+else
+{
+digitalWrite(outA,LOW);
+digitalWrite (outB, HIGH);
+}
+}

@@ -1,0 +1,24 @@
+int buzzer = 9;
+int i;
+void setup()
+{
+pinMode (buzzer,OUTPUT); 
+}
+void loop(){
+
+for(i=0;i<80;i++)
+{
+digitalWrite(buzzer,HIGH);
+delay(10); 
+digitalWrite(buzzer,LOW);
+delay(10); 
+}
+
+for(i=0;i<100;i++){
+digitalWrite(buzzer,HIGH);
+delay(20); 
+digitalWrite(buzzer,LOW);
+delay(20); 
+
+}
+}

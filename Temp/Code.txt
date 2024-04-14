@@ -1,0 +1,16 @@
+int temp=A0;
+void setup()
+{
+Serial.begin(9600);
+}
+void loop ()
+{
+int val;
+int data;
+val = analogRead(temp);
+data = (val*5)/10;
+//Serial.print(“Temp:”);
+Serial.println(data);
+//Serial.println(“C”);
+delay(500);
+}
