@@ -1,0 +1,26 @@
+Chmod 400 pem or / windows e prop
+Ssh-I loc ec2-user@ip
+Sudo su
+Yum update -y
+Yum install httpd-y 
+
+cd 
+/var/www/html/.
+Vi index.html
+Save with :wq
+Service httpd start
+Start httpd.service
+
+
+Or 
+After yum update
+
+ sudo apt -y install apache2
+set in bound rules
+sudo systemctl start apache2
+sudo systemctl enable apache2
+sudo chmod 777 /var/www/html
+sudo vi /var/www/html/index.html
+rm -rf /var/www/html/index.html------ for deleting
+sudo vi /var/www/html/index.html
+:wq
